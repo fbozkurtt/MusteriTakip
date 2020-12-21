@@ -34,6 +34,7 @@ namespace MusteriTakip.Forms
             this.lblCompany = new System.Windows.Forms.Label();
             this.lblNotes = new System.Windows.Forms.Label();
             this.btnRefresh = new System.Windows.Forms.Button();
+            this.btnAddCustomer = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.customersDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -107,11 +108,22 @@ namespace MusteriTakip.Forms
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
+            // btnAddCustomer
+            // 
+            this.btnAddCustomer.Location = new System.Drawing.Point(12, 13);
+            this.btnAddCustomer.Name = "btnAddCustomer";
+            this.btnAddCustomer.Size = new System.Drawing.Size(78, 27);
+            this.btnAddCustomer.TabIndex = 5;
+            this.btnAddCustomer.Text = "Müşteri Ekle";
+            this.btnAddCustomer.UseVisualStyleBackColor = true;
+            this.btnAddCustomer.Click += new System.EventHandler(this.btnAddCustomer_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnAddCustomer);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.lblNotes);
             this.Controls.Add(this.lblCompany);
@@ -136,5 +148,6 @@ namespace MusteriTakip.Forms
         private System.Windows.Forms.Label lblCompany;
         private System.Windows.Forms.Label lblNotes;
         private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.Button btnAddCustomer;
     }
 }

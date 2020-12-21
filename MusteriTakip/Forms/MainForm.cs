@@ -22,7 +22,7 @@ namespace MusteriTakip.Forms
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            customersDataGridView.DataSource = DatabaseOperations.GetCustomers().Tables["Customer"];
+            customersDataGridView.DataSource = DatabaseOperations.GetAllCustomers().Tables["Customer"];
             customersDataGridView.Columns[0].Width = 30;
             //AddCustomer("furkan bozkurt", "deneme şirketi");
         }
@@ -46,7 +46,13 @@ namespace MusteriTakip.Forms
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            customersDataGridView.DataSource = DatabaseOperations.GetCustomers().Tables["Customer"];
+            customersDataGridView.DataSource = DatabaseOperations.GetAllCustomers().Tables["Customer"];
+        }
+
+        private void btnAddCustomer_Click(object sender, EventArgs e)
+        {
+            var addnewCustomerForm = new AddNewCustomerForm();
+            addnewCustomerForm.Show();
         }
     }
 }

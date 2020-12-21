@@ -13,7 +13,7 @@ namespace MusteriTakip
     public static class DatabaseOperations
     {
         public static SQLiteConnection con = new SQLiteConnection("Data Source=MusteriTakipDB.db;");
-        public static DataSet GetCustomers()
+        public static DataSet GetAllCustomers()
         {
             SQLiteDataAdapter da;
             DataSet ds;
@@ -24,12 +24,12 @@ namespace MusteriTakip
             con.Close();
             return ds;
         }
-        public static void AddCustomer(Customer customer)
+        public static void AddCustomer(string name, string company = "")
         {
 
             var cmd = new SQLiteCommand("INSERT INTO Customer (Name, Company) VALUES(@Name, @Company); ", con);
-            cmd.Parameters.Add("@Name", DbType.String, customer.Name.Length).Value = customer.Name.ToUpper(new CultureInfo("tr-TR"));
-            cmd.Parameters.Add("@Company", DbType.String, customer.Company.Length).Value = customer.Company.ToUpper(new CultureInfo("tr-TR"));
+            cmd.Parameters.Add("@Name", DbType.String, name.Length).Value = name.ToUpper(new CultureInfo("tr-TR"));
+            cmd.Parameters.Add("@Company", DbType.String, company.Length).Value = company.ToUpper(new CultureInfo("tr-TR"));
             con.Open();
             cmd.ExecuteNonQuery();
             con.Close();
