@@ -13,8 +13,10 @@ namespace MusteriTakip.Forms
 {
     public partial class AddNewCustomerForm : Form
     {
-        public AddNewCustomerForm()
+        private MainForm MainForm { get; set; }
+        public AddNewCustomerForm(Form callingForm)
         {
+            MainForm = callingForm as MainForm;
             InitializeComponent();
         }
 
@@ -22,16 +24,18 @@ namespace MusteriTakip.Forms
         {
             if (String.IsNullOrEmpty(txtName.Text))
             {
-                MessageBox.Show("Müşteri ismi boş olmamalıdır", "Hata!");
+                MessageBox.Show("Müşteri ismi boş olamaz.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
             try
             {
                 DatabaseOperations.AddCustomer(txtName.Text, txtCompany.Text);
+                MainForm.BtnRefreshPerformClick();
                 this.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Hata");
+                MessageBox.Show(ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

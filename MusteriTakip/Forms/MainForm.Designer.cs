@@ -29,6 +29,7 @@ namespace MusteriTakip.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.customersDataGridView = new System.Windows.Forms.DataGridView();
             this.lblName = new System.Windows.Forms.Label();
             this.lblCompany = new System.Windows.Forms.Label();
@@ -52,15 +53,19 @@ namespace MusteriTakip.Forms
             this.customersDataGridView.ColumnHeadersVisible = false;
             this.customersDataGridView.Cursor = System.Windows.Forms.Cursors.Hand;
             this.customersDataGridView.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.customersDataGridView.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.customersDataGridView.Location = new System.Drawing.Point(12, 73);
             this.customersDataGridView.MultiSelect = false;
             this.customersDataGridView.Name = "customersDataGridView";
             this.customersDataGridView.ReadOnly = true;
             this.customersDataGridView.RowHeadersVisible = false;
             this.customersDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle2.NullValue = "-";
+            this.customersDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.customersDataGridView.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.customersDataGridView.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(2);
-            this.customersDataGridView.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.customersDataGridView.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.customersDataGridView.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.customersDataGridView.RowTemplate.Height = 36;
             this.customersDataGridView.RowTemplate.ReadOnly = true;
             this.customersDataGridView.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -123,6 +128,7 @@ namespace MusteriTakip.Forms
             // txtSearch
             // 
             this.txtSearch.Location = new System.Drawing.Point(349, 17);
+            this.txtSearch.MaxLength = 256;
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(100, 20);
             this.txtSearch.TabIndex = 6;
@@ -139,6 +145,7 @@ namespace MusteriTakip.Forms
             // 
             // MainForm
             // 
+            this.AcceptButton = this.btnSearch;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);

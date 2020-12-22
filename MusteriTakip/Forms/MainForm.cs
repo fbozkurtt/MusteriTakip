@@ -27,16 +27,14 @@ namespace MusteriTakip.Forms
         private void MainForm_Load(object sender, EventArgs e)
         {
             customersDataGridView.DataSource = DatabaseOperations.GetAllCustomers().Tables["Customer"];
-            customersDataGridView.Columns[0].Width = 30;
-            //AddCustomer("furkan bozkurt", "deneme şirketi");
+            customersDataGridView.Columns[0].Visible = false;
         }
 
         private void customersDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             var dgv = (DataGridView)sender;
             var currentRow = dgv.CurrentRow;
-            int id;
-            Int32.TryParse(currentRow.Cells[0].Value.ToString(), out id);
+            Int32.TryParse(currentRow.Cells[0].Value.ToString(), out var id);
             new CustomerForm(DatabaseOperations.GetCustomerById(id), this).Show();
         }
 
@@ -48,13 +46,20 @@ namespace MusteriTakip.Forms
 
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
-            var addnewCustomerForm = new AddNewCustomerForm();
+            var addnewCustomerForm = new AddNewCustomerForm(this);
             addnewCustomerForm.Show();
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            customersDataGridView.DataSource = DatabaseOperations.GetCustomersByName(txtSearch.Text).Tables["Customer"];
+            if (String.IsNullOrEmpty(txtSearch.Text))
+            {
+                customersDataGridView.DataSource = DatabaseOperations.GetAllCustomers().Tables["Customer"];
+            }
+            else
+            {
+                customersDataGridView.DataSource = DatabaseOperations.GetCustomersByName(txtSearch.Text).Tables["Customer"];
+            }
         }
     }
 }
