@@ -37,6 +37,7 @@ namespace MusteriTakip.Forms
             this.lblName = new System.Windows.Forms.Label();
             this.lblCompany = new System.Windows.Forms.Label();
             this.lblNotes = new System.Windows.Forms.Label();
+            this.lblDateCreated = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.operationsDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -113,11 +114,21 @@ namespace MusteriTakip.Forms
             this.lblNotes.TabIndex = 7;
             this.lblNotes.Text = "Notlar";
             // 
+            // lblDateCreated
+            // 
+            this.lblDateCreated.AutoSize = true;
+            this.lblDateCreated.Location = new System.Drawing.Point(828, 425);
+            this.lblDateCreated.Name = "lblDateCreated";
+            this.lblDateCreated.Size = new System.Drawing.Size(91, 13);
+            this.lblDateCreated.TabIndex = 8;
+            this.lblDateCreated.Text = "oluşturulma tarihi: ";
+            // 
             // CustomerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1015, 450);
+            this.Controls.Add(this.lblDateCreated);
             this.Controls.Add(this.lblNotes);
             this.Controls.Add(this.lblCompany);
             this.Controls.Add(this.lblName);
@@ -147,5 +158,6 @@ namespace MusteriTakip.Forms
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblCompany;
         private System.Windows.Forms.Label lblNotes;
+        private System.Windows.Forms.Label lblDateCreated;
     }
 }

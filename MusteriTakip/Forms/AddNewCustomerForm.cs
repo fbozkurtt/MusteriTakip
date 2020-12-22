@@ -24,8 +24,15 @@ namespace MusteriTakip.Forms
             {
                 MessageBox.Show("Müşteri ismi boş olmamalıdır", "Hata!");
             }
-            DatabaseOperations.AddCustomer(txtName.Text, txtCompany.Text);
-            this.Close();
+            try
+            {
+                DatabaseOperations.AddCustomer(txtName.Text, txtCompany.Text);
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Hata");
+            }
         }
     }
 }

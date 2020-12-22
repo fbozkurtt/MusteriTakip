@@ -15,6 +15,10 @@ namespace MusteriTakip.Forms
 {
     public partial class MainForm : Form
     {
+        public void BtnRefreshPerformClick()
+        {
+            btnRefresh.PerformClick();
+        }
         public MainForm()
         {
             InitializeComponent();
@@ -30,22 +34,15 @@ namespace MusteriTakip.Forms
         private void customersDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             var dgv = (DataGridView)sender;
-            var table = (DataTable)dgv.DataSource;
-            var id = table.Rows[0].ItemArray[0];
-            var name = table.Rows[0].ItemArray[1];
-            var company = table.Rows[0].ItemArray[2];
-            var notes = table.Rows[0].ItemArray[3];
-            new CustomerForm(new Customer()
-            {
-                Id = Int32.Parse(id.ToString()),
-                Name = name.ToString(),
-                Company = company.ToString(),
-                Notes = notes.ToString()
-            }).Show();
+            var currentRow = dgv.CurrentRow;
+            int id;
+            Int32.TryParse(currentRow.Cells[0].Value.ToString(), out id);
+            new CustomerForm(DatabaseOperations.GetCustomerById(id), this).Show();
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
+            txtSearch.Text = null;
             customersDataGridView.DataSource = DatabaseOperations.GetAllCustomers().Tables["Customer"];
         }
 
@@ -53,6 +50,11 @@ namespace MusteriTakip.Forms
         {
             var addnewCustomerForm = new AddNewCustomerForm();
             addnewCustomerForm.Show();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            customersDataGridView.DataSource = DatabaseOperations.GetCustomersByName(txtSearch.Text).Tables["Customer"];
         }
     }
 }

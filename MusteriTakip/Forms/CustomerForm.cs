@@ -13,12 +13,12 @@ namespace MusteriTakip.Forms
 {
     public partial class CustomerForm : Form
     {
-        public Customer Customer { get; set; }
-        public List<Operation> Operations { get; set; }
-        public string Company { get; set; }
-        public CustomerForm(Customer customer)
+        private MainForm MainForm { get; set; }
+        private Customer Customer { get; set; }
+        public CustomerForm(Customer customer, MainForm mainForm)
         {
             this.Customer = customer;
+            MainForm = mainForm;
             InitializeComponent();
         }
 
@@ -28,12 +28,16 @@ namespace MusteriTakip.Forms
             txtName.Text = Customer.Name;
             txtCompany.Text = Customer.Company;
             txtNotes.Text = Customer.Notes;
+            lblDateCreated.Text += Customer.DateCreated;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            DatabaseOperations.UpdateCustomerName(Customer.Id, txtName.Text);
+            DatabaseOperations.UpdateCustomerCompany(Customer.Id, txtCompany.Text);
             DatabaseOperations.UpdateCustomerNotes(Customer.Id, txtNotes.Text);
-            MessageBox.Show("Değişikler kaydedildi", "Bilgi");
+            //MessageBox.Show("Değişikler kaydedildi", "Bilgi");
+            MainForm.BtnRefreshPerformClick();
         }
     }
 }
