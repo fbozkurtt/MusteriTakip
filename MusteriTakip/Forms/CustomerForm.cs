@@ -63,16 +63,20 @@ namespace MusteriTakip.Forms
 
         private void btnDeleteOperation_Click(object sender, EventArgs e)
         {
-            try
+            var result = MessageBox.Show("Seçili işi silmek istediğinize emin misiniz?", "Dikkat", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
             {
-                var rowToDelete = operationsDataGridView.CurrentRow;
-                var id = Convert.ToInt32(rowToDelete.Cells[0].Value);
-                DatabaseOperations.DeleteOperation(id);
-                operationsDataGridView.Rows.Remove(rowToDelete);
-            }
-            catch
-            {
-                MessageBox.Show("Bir iş seçin.", "Dikkat", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                try
+                {
+                    var rowToDelete = operationsDataGridView.CurrentRow;
+                    var id = Convert.ToInt32(rowToDelete.Cells[0].Value);
+                    DatabaseOperations.DeleteOperation(id);
+                    operationsDataGridView.Rows.Remove(rowToDelete);
+                }
+                catch
+                {
+                    MessageBox.Show("Bir iş seçin.", "Dikkat", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
         }
     }
