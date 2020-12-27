@@ -51,6 +51,7 @@ namespace MusteriTakip.Forms
             // 
             // txtNotes
             // 
+            this.txtNotes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNotes.Location = new System.Drawing.Point(12, 159);
             this.txtNotes.MaxLength = 1024;
             this.txtNotes.Multiline = true;
@@ -74,6 +75,8 @@ namespace MusteriTakip.Forms
             this.operationsDataGridView.Name = "operationsDataGridView";
             this.operationsDataGridView.ReadOnly = true;
             this.operationsDataGridView.RowHeadersVisible = false;
+            this.operationsDataGridView.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.operationsDataGridView.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(2);
             this.operationsDataGridView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.operationsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.operationsDataGridView.Size = new System.Drawing.Size(715, 346);

@@ -21,7 +21,7 @@ namespace MusteriTakip.Forms
             MainForm = callingForm as MainForm;
             this.DesktopLocation = MainForm.DesktopLocation;
             InitializeComponent();
-            MainForm.Hide();
+            //MainForm.Hide();
         }
 
         private void CustomerForm_Load(object sender, EventArgs e)
@@ -65,27 +65,28 @@ namespace MusteriTakip.Forms
 
         private void btnDeleteOperation_Click(object sender, EventArgs e)
         {
-            var result = MessageBox.Show("Seçili işi silmek istediğinize emin misiniz?", "Dikkat", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
+            try
             {
-                try
+                var rowToDelete = operationsDataGridView.CurrentRow;
+                var id = Convert.ToInt32(rowToDelete.Cells[0].Value);
+                var result = MessageBox.Show("Seçili işi silmek istediğinize emin misiniz?", "Dikkat", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.No)
                 {
-                    var rowToDelete = operationsDataGridView.CurrentRow;
-                    var id = Convert.ToInt32(rowToDelete.Cells[0].Value);
-                    DatabaseOperations.DeleteOperation(id);
-                    operationsDataGridView.Rows.Remove(rowToDelete);
+                    return;
                 }
-                catch
-                {
-                    MessageBox.Show("Bir iş seçin.", "Dikkat", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
+                DatabaseOperations.DeleteOperation(id);
+                operationsDataGridView.Rows.Remove(rowToDelete);
+            }
+            catch
+            {
+                MessageBox.Show("Bir iş seçin.", "Dikkat", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Close();
-            MainForm.Show();
+            //MainForm.Show();
         }
 
         private void CustomerForm_Move(object sender, EventArgs e)
