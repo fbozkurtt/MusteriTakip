@@ -19,13 +19,15 @@ namespace MusteriTakip.Forms
         {
             this.Customer = customer;
             MainForm = callingForm as MainForm;
+            this.DesktopLocation = MainForm.DesktopLocation;
             InitializeComponent();
+            MainForm.Hide();
         }
 
         private void CustomerForm_Load(object sender, EventArgs e)
         {
             LoadOperationsData();
-            this.Text = Customer.Name + " / " + Customer.Company;
+            this.Text = Customer.Name;
             txtName.Text = Customer.Name;
             txtCompany.Text = Customer.Company;
             txtNotes.Text = Customer.Notes;
@@ -78,6 +80,22 @@ namespace MusteriTakip.Forms
                     MessageBox.Show("Bir iş seçin.", "Dikkat", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            MainForm.Show();
+        }
+
+        private void CustomerForm_Move(object sender, EventArgs e)
+        {
+            MainForm.DesktopLocation = this.DesktopLocation;
+        }
+
+        private void CustomerForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            MainForm.Show();
         }
     }
 }

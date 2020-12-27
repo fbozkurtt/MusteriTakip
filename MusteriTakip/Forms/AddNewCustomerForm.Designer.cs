@@ -38,43 +38,46 @@ namespace MusteriTakip.Forms
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(54, 12);
+            this.txtName.Location = new System.Drawing.Point(72, 16);
             this.txtName.MaxLength = 256;
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(154, 20);
+            this.txtName.Size = new System.Drawing.Size(190, 20);
             this.txtName.TabIndex = 0;
             // 
             // txtCompany
             // 
-            this.txtCompany.Location = new System.Drawing.Point(54, 43);
+            this.txtCompany.Location = new System.Drawing.Point(72, 46);
             this.txtCompany.MaxLength = 256;
             this.txtCompany.Name = "txtCompany";
-            this.txtCompany.Size = new System.Drawing.Size(154, 20);
+            this.txtCompany.Size = new System.Drawing.Size(190, 20);
             this.txtCompany.TabIndex = 1;
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
+            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.Location = new System.Drawing.Point(13, 16);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(28, 13);
+            this.lblName.Size = new System.Drawing.Size(48, 20);
             this.lblName.TabIndex = 2;
-            this.lblName.Text = "İsim:";
+            this.lblName.Text = "*İsim:";
             // 
             // lblCompany
             // 
             this.lblCompany.AutoSize = true;
+            this.lblCompany.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCompany.Location = new System.Drawing.Point(13, 46);
             this.lblCompany.Name = "lblCompany";
-            this.lblCompany.Size = new System.Drawing.Size(35, 13);
+            this.lblCompany.Size = new System.Drawing.Size(53, 20);
             this.lblCompany.TabIndex = 3;
             this.lblCompany.Text = "Firma:";
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(85, 81);
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Location = new System.Drawing.Point(188, 89);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.Size = new System.Drawing.Size(74, 29);
             this.btnAdd.TabIndex = 2;
             this.btnAdd.Text = "Ekle";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -85,7 +88,7 @@ namespace MusteriTakip.Forms
             this.AcceptButton = this.btnAdd;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(235, 132);
+            this.ClientSize = new System.Drawing.Size(274, 130);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.lblCompany);
             this.Controls.Add(this.lblName);

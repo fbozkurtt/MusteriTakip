@@ -38,56 +38,64 @@ namespace MusteriTakip.Forms
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(88, 12);
+            this.txtDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescription.Location = new System.Drawing.Point(117, 9);
             this.txtDescription.MaxLength = 1024;
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(286, 146);
+            this.txtDescription.Size = new System.Drawing.Size(227, 146);
             this.txtDescription.TabIndex = 0;
             // 
             // lblDescription
             // 
             this.lblDescription.AutoSize = true;
-            this.lblDescription.Location = new System.Drawing.Point(12, 12);
+            this.lblDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescription.Location = new System.Drawing.Point(8, 9);
             this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(70, 13);
+            this.lblDescription.Size = new System.Drawing.Size(99, 20);
             this.lblDescription.TabIndex = 1;
-            this.lblDescription.Text = "İş açıklaması:";
+            this.lblDescription.Text = "İş açıklaması";
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(299, 164);
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Image = global::MusteriTakip.Properties.Resources.save;
+            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSave.Location = new System.Drawing.Point(251, 162);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 28);
+            this.btnSave.Size = new System.Drawing.Size(93, 40);
             this.btnSave.TabIndex = 2;
             this.btnSave.Text = "Kaydet";
+            this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // txtChargeAmount
             // 
-            this.txtChargeAmount.Location = new System.Drawing.Point(88, 172);
+            this.txtChargeAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtChargeAmount.Location = new System.Drawing.Point(117, 161);
             this.txtChargeAmount.MaxLength = 7;
             this.txtChargeAmount.Name = "txtChargeAmount";
             this.txtChargeAmount.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtChargeAmount.Size = new System.Drawing.Size(69, 20);
+            this.txtChargeAmount.Size = new System.Drawing.Size(69, 26);
             this.txtChargeAmount.TabIndex = 3;
             this.txtChargeAmount.Text = "0";
             // 
             // lblChargeAmount
             // 
             this.lblChargeAmount.AutoSize = true;
-            this.lblChargeAmount.Location = new System.Drawing.Point(46, 175);
+            this.lblChargeAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblChargeAmount.Location = new System.Drawing.Point(59, 161);
             this.lblChargeAmount.Name = "lblChargeAmount";
-            this.lblChargeAmount.Size = new System.Drawing.Size(36, 13);
+            this.lblChargeAmount.Size = new System.Drawing.Size(48, 20);
             this.lblChargeAmount.TabIndex = 4;
-            this.lblChargeAmount.Text = "Ücret:";
+            this.lblChargeAmount.Text = "Ücret";
             // 
             // AddNewOperationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(400, 200);
+            this.ClientSize = new System.Drawing.Size(356, 214);
             this.Controls.Add(this.lblChargeAmount);
             this.Controls.Add(this.txtChargeAmount);
             this.Controls.Add(this.btnSave);

@@ -29,32 +29,34 @@ namespace MusteriTakip.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerForm));
             this.txtNotes = new System.Windows.Forms.TextBox();
             this.operationsDataGridView = new System.Windows.Forms.DataGridView();
-            this.btnSave = new System.Windows.Forms.Button();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtCompany = new System.Windows.Forms.TextBox();
             this.lblName = new System.Windows.Forms.Label();
             this.lblCompany = new System.Windows.Forms.Label();
             this.lblNotes = new System.Windows.Forms.Label();
             this.lblDateCreated = new System.Windows.Forms.Label();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnAddOperation = new System.Windows.Forms.Button();
             this.lblDescription = new System.Windows.Forms.Label();
             this.lblCharge = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
+            this.btnBack = new System.Windows.Forms.Button();
             this.btnDeleteOperation = new System.Windows.Forms.Button();
+            this.btnAddOperation = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.operationsDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // txtNotes
             // 
-            this.txtNotes.Location = new System.Drawing.Point(15, 140);
+            this.txtNotes.Location = new System.Drawing.Point(12, 159);
             this.txtNotes.MaxLength = 1024;
             this.txtNotes.Multiline = true;
             this.txtNotes.Name = "txtNotes";
             this.txtNotes.Size = new System.Drawing.Size(270, 234);
-            this.txtNotes.TabIndex = 1;
+            this.txtNotes.TabIndex = 3;
             // 
             // operationsDataGridView
             // 
@@ -67,145 +69,191 @@ namespace MusteriTakip.Forms
             this.operationsDataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
             this.operationsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.operationsDataGridView.ColumnHeadersVisible = false;
-            this.operationsDataGridView.Location = new System.Drawing.Point(288, 72);
+            this.operationsDataGridView.Location = new System.Drawing.Point(288, 102);
             this.operationsDataGridView.MultiSelect = false;
             this.operationsDataGridView.Name = "operationsDataGridView";
             this.operationsDataGridView.ReadOnly = true;
             this.operationsDataGridView.RowHeadersVisible = false;
             this.operationsDataGridView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.operationsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.operationsDataGridView.Size = new System.Drawing.Size(715, 334);
-            this.operationsDataGridView.TabIndex = 0;
-            // 
-            // btnSave
-            // 
-            this.btnSave.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnSave.Location = new System.Drawing.Point(202, 380);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(83, 26);
-            this.btnSave.TabIndex = 2;
-            this.btnSave.Text = "Kaydet";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.operationsDataGridView.Size = new System.Drawing.Size(715, 346);
+            this.operationsDataGridView.TabIndex = 4;
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(59, 46);
+            this.txtName.Location = new System.Drawing.Point(59, 76);
             this.txtName.MaxLength = 256;
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(223, 20);
-            this.txtName.TabIndex = 0;
+            this.txtName.TabIndex = 1;
             this.txtName.TabStop = false;
             // 
             // txtCompany
             // 
-            this.txtCompany.Location = new System.Drawing.Point(59, 72);
+            this.txtCompany.Location = new System.Drawing.Point(59, 102);
             this.txtCompany.MaxLength = 256;
             this.txtCompany.Name = "txtCompany";
             this.txtCompany.Size = new System.Drawing.Size(223, 20);
-            this.txtCompany.TabIndex = 1;
+            this.txtCompany.TabIndex = 2;
             this.txtCompany.TabStop = false;
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(12, 49);
+            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Location = new System.Drawing.Point(8, 74);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(25, 13);
+            this.lblName.Size = new System.Drawing.Size(38, 20);
             this.lblName.TabIndex = 5;
             this.lblName.Text = "İsim";
             // 
             // lblCompany
             // 
             this.lblCompany.AutoSize = true;
-            this.lblCompany.Location = new System.Drawing.Point(12, 75);
+            this.lblCompany.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCompany.Location = new System.Drawing.Point(8, 102);
             this.lblCompany.Name = "lblCompany";
-            this.lblCompany.Size = new System.Drawing.Size(32, 13);
+            this.lblCompany.Size = new System.Drawing.Size(49, 20);
             this.lblCompany.TabIndex = 6;
             this.lblCompany.Text = "Firma";
             // 
             // lblNotes
             // 
             this.lblNotes.AutoSize = true;
-            this.lblNotes.Location = new System.Drawing.Point(12, 124);
+            this.lblNotes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNotes.Location = new System.Drawing.Point(8, 136);
             this.lblNotes.Name = "lblNotes";
-            this.lblNotes.Size = new System.Drawing.Size(35, 13);
+            this.lblNotes.Size = new System.Drawing.Size(51, 20);
             this.lblNotes.TabIndex = 7;
             this.lblNotes.Text = "Notlar";
             // 
             // lblDateCreated
             // 
             this.lblDateCreated.AutoSize = true;
-            this.lblDateCreated.Location = new System.Drawing.Point(103, 95);
+            this.lblDateCreated.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDateCreated.Location = new System.Drawing.Point(687, 462);
             this.lblDateCreated.Name = "lblDateCreated";
-            this.lblDateCreated.Size = new System.Drawing.Size(91, 13);
+            this.lblDateCreated.Size = new System.Drawing.Size(193, 20);
             this.lblDateCreated.TabIndex = 8;
-            this.lblDateCreated.Text = "oluşturulma tarihi: ";
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.ForeColor = System.Drawing.Color.Red;
-            this.btnDelete.Location = new System.Drawing.Point(604, 412);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(103, 23);
-            this.btnDelete.TabIndex = 9;
-            this.btnDelete.Text = "Müşteriyi Sil";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // btnAddOperation
-            // 
-            this.btnAddOperation.Location = new System.Drawing.Point(928, 412);
-            this.btnAddOperation.Name = "btnAddOperation";
-            this.btnAddOperation.Size = new System.Drawing.Size(75, 23);
-            this.btnAddOperation.TabIndex = 10;
-            this.btnAddOperation.Text = "İş Ekle";
-            this.btnAddOperation.UseVisualStyleBackColor = true;
-            this.btnAddOperation.Click += new System.EventHandler(this.btnAddOperation_Click);
+            this.lblDateCreated.Text = "Müşteri oluşturulma tarihi: ";
             // 
             // lblDescription
             // 
             this.lblDescription.AutoSize = true;
-            this.lblDescription.Location = new System.Drawing.Point(364, 56);
+            this.lblDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescription.Location = new System.Drawing.Point(363, 74);
             this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(50, 13);
+            this.lblDescription.Size = new System.Drawing.Size(73, 20);
             this.lblDescription.TabIndex = 11;
             this.lblDescription.Text = "Açıklama";
             // 
             // lblCharge
             // 
             this.lblCharge.AutoSize = true;
-            this.lblCharge.Location = new System.Drawing.Point(626, 56);
+            this.lblCharge.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCharge.Location = new System.Drawing.Point(626, 74);
             this.lblCharge.Name = "lblCharge";
-            this.lblCharge.Size = new System.Drawing.Size(33, 13);
+            this.lblCharge.Size = new System.Drawing.Size(48, 20);
             this.lblCharge.TabIndex = 12;
             this.lblCharge.Text = "Ücret";
             // 
             // lblDate
             // 
             this.lblDate.AutoSize = true;
-            this.lblDate.Location = new System.Drawing.Point(860, 56);
+            this.lblDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDate.Location = new System.Drawing.Point(867, 74);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(31, 13);
+            this.lblDate.Size = new System.Drawing.Size(44, 20);
             this.lblDate.TabIndex = 13;
             this.lblDate.Text = "Tarih";
             // 
+            // btnBack
+            // 
+            this.btnBack.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.Image = global::MusteriTakip.Properties.Resources.back;
+            this.btnBack.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBack.Location = new System.Drawing.Point(12, 12);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Padding = new System.Windows.Forms.Padding(2);
+            this.btnBack.Size = new System.Drawing.Size(90, 47);
+            this.btnBack.TabIndex = 0;
+            this.btnBack.Text = "Geri";
+            this.btnBack.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // btnDeleteOperation
             // 
-            this.btnDeleteOperation.Location = new System.Drawing.Point(847, 412);
+            this.btnDeleteOperation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteOperation.Image = global::MusteriTakip.Properties.Resources.negative;
+            this.btnDeleteOperation.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDeleteOperation.Location = new System.Drawing.Point(814, 12);
             this.btnDeleteOperation.Name = "btnDeleteOperation";
-            this.btnDeleteOperation.Size = new System.Drawing.Size(75, 23);
-            this.btnDeleteOperation.TabIndex = 14;
+            this.btnDeleteOperation.Padding = new System.Windows.Forms.Padding(2);
+            this.btnDeleteOperation.Size = new System.Drawing.Size(83, 47);
+            this.btnDeleteOperation.TabIndex = 6;
+            this.btnDeleteOperation.TabStop = false;
             this.btnDeleteOperation.Text = "İşi sil";
+            this.btnDeleteOperation.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDeleteOperation.UseVisualStyleBackColor = true;
             this.btnDeleteOperation.Click += new System.EventHandler(this.btnDeleteOperation_Click);
+            // 
+            // btnAddOperation
+            // 
+            this.btnAddOperation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddOperation.Image = ((System.Drawing.Image)(resources.GetObject("btnAddOperation.Image")));
+            this.btnAddOperation.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddOperation.Location = new System.Drawing.Point(903, 12);
+            this.btnAddOperation.Name = "btnAddOperation";
+            this.btnAddOperation.Padding = new System.Windows.Forms.Padding(2);
+            this.btnAddOperation.Size = new System.Drawing.Size(100, 47);
+            this.btnAddOperation.TabIndex = 10;
+            this.btnAddOperation.TabStop = false;
+            this.btnAddOperation.Text = "İş Ekle";
+            this.btnAddOperation.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAddOperation.UseVisualStyleBackColor = true;
+            this.btnAddOperation.Click += new System.EventHandler(this.btnAddOperation_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.Color.Red;
+            this.btnDelete.Image = global::MusteriTakip.Properties.Resources.remove;
+            this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDelete.Location = new System.Drawing.Point(12, 399);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Padding = new System.Windows.Forms.Padding(2);
+            this.btnDelete.Size = new System.Drawing.Size(129, 49);
+            this.btnDelete.TabIndex = 6;
+            this.btnDelete.Text = "Müşteriyi Sil";
+            this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnSave.Image = global::MusteriTakip.Properties.Resources.save;
+            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSave.Location = new System.Drawing.Point(186, 399);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Padding = new System.Windows.Forms.Padding(2);
+            this.btnSave.Size = new System.Drawing.Size(96, 49);
+            this.btnSave.TabIndex = 5;
+            this.btnSave.Text = "Kaydet";
+            this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // CustomerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1015, 447);
+            this.CancelButton = this.btnBack;
+            this.ClientSize = new System.Drawing.Size(1015, 491);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnDeleteOperation);
             this.Controls.Add(this.lblDate);
             this.Controls.Add(this.lblCharge);
@@ -222,10 +270,14 @@ namespace MusteriTakip.Forms
             this.Controls.Add(this.operationsDataGridView);
             this.Controls.Add(this.txtNotes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "CustomerForm";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Müşteri";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CustomerForm_FormClosed);
             this.Load += new System.EventHandler(this.CustomerForm_Load);
+            this.Move += new System.EventHandler(this.CustomerForm_Move);
             ((System.ComponentModel.ISupportInitialize)(this.operationsDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -249,5 +301,6 @@ namespace MusteriTakip.Forms
         private System.Windows.Forms.Label lblCharge;
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Button btnDeleteOperation;
+        private System.Windows.Forms.Button btnBack;
     }
 }

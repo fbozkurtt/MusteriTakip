@@ -49,8 +49,7 @@ namespace MusteriTakip.Forms
             var addnewCustomerForm = new AddNewCustomerForm(this);
             addnewCustomerForm.Show();
         }
-
-        private void btnSearch_Click(object sender, EventArgs e)
+        private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(txtSearch.Text))
             {
@@ -59,6 +58,15 @@ namespace MusteriTakip.Forms
             else
             {
                 customersDataGridView.DataSource = DatabaseOperations.GetCustomersByName(txtSearch.Text).Tables["Customer"];
+            }
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            var result = MessageBox.Show("Çıkmak istediğinize emin misiniz?", "Bilgi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.No)
+            {
+                e.Cancel = true;
             }
         }
     }
