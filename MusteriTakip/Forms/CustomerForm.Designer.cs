@@ -64,7 +64,6 @@ namespace MusteriTakip.Forms
             this.operationsDataGridView.AllowUserToAddRows = false;
             this.operationsDataGridView.AllowUserToDeleteRows = false;
             this.operationsDataGridView.AllowUserToResizeColumns = false;
-            this.operationsDataGridView.AllowUserToResizeRows = false;
             this.operationsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.operationsDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.operationsDataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
