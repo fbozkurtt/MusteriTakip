@@ -1,12 +1,8 @@
 ﻿using MusteriTakip.Models;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SQLite;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MusteriTakip
 {
@@ -15,6 +11,15 @@ namespace MusteriTakip
         public static SQLiteConnection con = new SQLiteConnection("Data Source=MusteriTakipDB.db;");
         static DatabaseOperations()
         {
+            if (!System.IO.File.Exists("MusteriTakipDB.db"))
+            {
+                SQLiteConnection.CreateFile("MusteriTakipDB.db");
+                var cmdText = System.IO.File.ReadAllText("CreateDatabase.sql");
+                var cmd = new SQLiteCommand(cmdText, con);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                return;
+            }
             con.Open();
         }
         public static DataSet GetAllCustomers()
