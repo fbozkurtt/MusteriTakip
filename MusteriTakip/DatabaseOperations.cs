@@ -13,8 +13,8 @@ namespace MusteriTakip
         {
             if (!System.IO.File.Exists("MusteriTakipDB.db"))
             {
-                SQLiteConnection.CreateFile("MusteriTakipDB.db");
                 var cmdText = System.IO.File.ReadAllText("CreateDatabase.sql");
+                SQLiteConnection.CreateFile("MusteriTakipDB.db");
                 var cmd = new SQLiteCommand(cmdText, con);
                 con.Open();
                 cmd.ExecuteNonQuery();
@@ -109,7 +109,12 @@ DELETE FROM Operation WHERE CustomerId = @Id", con);
             cmd.Parameters.Add("@DateCreated", DbType.String, dateCrated.Length).Value = dateCrated;
             cmd.ExecuteNonQuery();
         }
-
+        public static void DeleteOperation(int id)
+        {
+            var cmd = new SQLiteCommand("DELETE FROM Operation WHERE Id = @Id; ", con);
+            cmd.Parameters.Add("@Id", DbType.Int32).Value = id;
+            cmd.ExecuteNonQuery();
+        }
         public static DataSet GetAllOperationsOfCustomer(int customerId)
         {
             SQLiteDataAdapter da;
@@ -120,12 +125,6 @@ DELETE FROM Operation WHERE CustomerId = @Id", con);
             ds = new DataSet();
             da.Fill(ds, "Operation");
             return ds;
-        }
-        public static void DeleteCustomerOperations(int customerId)
-        {
-            var cmd = new SQLiteCommand("DELETE FROM Customer WHERE CustomerId = @CustomerId; ", con);
-            cmd.Parameters.Add("@CustomerId", DbType.Int32).Value = customerId;
-            cmd.ExecuteNonQuery();
         }
         public static void UpdateCustomerName(int id, string param)
         {

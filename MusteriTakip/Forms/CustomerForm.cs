@@ -60,5 +60,20 @@ namespace MusteriTakip.Forms
             var addNewOperationForm = new AddNewOperationForm(Customer.Id, this);
             addNewOperationForm.Show();
         }
+
+        private void btnDeleteOperation_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var rowToDelete = operationsDataGridView.CurrentRow;
+                var id = Convert.ToInt32(rowToDelete.Cells[0].Value);
+                DatabaseOperations.DeleteOperation(id);
+                operationsDataGridView.Rows.Remove(rowToDelete);
+            }
+            catch
+            {
+                MessageBox.Show("Bir iş seçin.", "Dikkat", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
     }
 }
