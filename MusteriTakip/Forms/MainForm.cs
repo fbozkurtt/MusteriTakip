@@ -35,7 +35,8 @@ namespace MusteriTakip.Forms
             var dgv = (DataGridView)sender;
             var currentRow = dgv.CurrentRow;
             Int32.TryParse(currentRow.Cells[0].Value.ToString(), out var id);
-            new CustomerForm(DatabaseOperations.GetCustomerById(id), this).Show();
+            var customerForm = new CustomerForm(DatabaseOperations.GetCustomerById(id), this);
+            customerForm.Show();
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
