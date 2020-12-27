@@ -38,18 +38,20 @@ namespace MusteriTakip.Forms
             // 
             // txtName
             // 
+            this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.Location = new System.Drawing.Point(72, 16);
             this.txtName.MaxLength = 256;
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(190, 20);
+            this.txtName.Size = new System.Drawing.Size(190, 26);
             this.txtName.TabIndex = 0;
             // 
             // txtCompany
             // 
+            this.txtCompany.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCompany.Location = new System.Drawing.Point(72, 46);
             this.txtCompany.MaxLength = 256;
             this.txtCompany.Name = "txtCompany";
-            this.txtCompany.Size = new System.Drawing.Size(190, 20);
+            this.txtCompany.Size = new System.Drawing.Size(190, 26);
             this.txtCompany.TabIndex = 1;
             // 
             // lblName
