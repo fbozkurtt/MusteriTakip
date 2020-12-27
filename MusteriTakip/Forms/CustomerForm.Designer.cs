@@ -64,6 +64,7 @@ namespace MusteriTakip.Forms
             this.operationsDataGridView.AllowUserToAddRows = false;
             this.operationsDataGridView.AllowUserToDeleteRows = false;
             this.operationsDataGridView.AllowUserToResizeColumns = false;
+            this.operationsDataGridView.AllowUserToResizeRows = false;
             this.operationsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.operationsDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.operationsDataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
@@ -80,6 +81,7 @@ namespace MusteriTakip.Forms
             this.operationsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.operationsDataGridView.Size = new System.Drawing.Size(715, 346);
             this.operationsDataGridView.TabIndex = 4;
+            this.operationsDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.operationsDataGridView_CellDoubleClick);
             // 
             // txtName
             // 

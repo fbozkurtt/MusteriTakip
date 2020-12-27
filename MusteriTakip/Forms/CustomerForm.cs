@@ -98,5 +98,12 @@ namespace MusteriTakip.Forms
         {
             MainForm.Show();
         }
+
+        private void operationsDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var dgv = (DataGridView)sender;
+            var currentRow = dgv.CurrentRow;
+            MessageBox.Show(currentRow.Cells[1].Value.ToString(), "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }
