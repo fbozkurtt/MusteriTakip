@@ -26,6 +26,7 @@ namespace MusteriTakip.Forms
             if (String.IsNullOrEmpty(txtDescription.Text))
             {
                 MessageBox.Show("Açıklama boş olamaz.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
             try
             {
@@ -36,6 +37,14 @@ namespace MusteriTakip.Forms
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void txtChargeAmount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
             }
         }
     }

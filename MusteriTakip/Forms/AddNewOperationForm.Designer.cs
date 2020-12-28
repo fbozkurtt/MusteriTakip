@@ -80,6 +80,7 @@ namespace MusteriTakip.Forms
             this.txtChargeAmount.Size = new System.Drawing.Size(69, 26);
             this.txtChargeAmount.TabIndex = 3;
             this.txtChargeAmount.Text = "0";
+            this.txtChargeAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtChargeAmount_KeyPress);
             // 
             // lblChargeAmount
             // 

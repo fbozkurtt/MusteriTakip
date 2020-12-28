@@ -58,6 +58,7 @@ namespace MusteriTakip.Forms
             this.txtNotes.Name = "txtNotes";
             this.txtNotes.Size = new System.Drawing.Size(270, 234);
             this.txtNotes.TabIndex = 3;
+            this.txtNotes.TextChanged += new System.EventHandler(this.textChanged);
             // 
             // operationsDataGridView
             // 
@@ -91,6 +92,7 @@ namespace MusteriTakip.Forms
             this.txtName.Size = new System.Drawing.Size(223, 20);
             this.txtName.TabIndex = 1;
             this.txtName.TabStop = false;
+            this.txtName.TextChanged += new System.EventHandler(this.textChanged);
             // 
             // txtCompany
             // 
@@ -100,6 +102,7 @@ namespace MusteriTakip.Forms
             this.txtCompany.Size = new System.Drawing.Size(223, 20);
             this.txtCompany.TabIndex = 2;
             this.txtCompany.TabStop = false;
+            this.txtCompany.TextChanged += new System.EventHandler(this.textChanged);
             // 
             // lblName
             // 
@@ -237,6 +240,7 @@ namespace MusteriTakip.Forms
             // 
             // btnSave
             // 
+            this.btnSave.Enabled = false;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnSave.Image = global::MusteriTakip.Properties.Resources.save;

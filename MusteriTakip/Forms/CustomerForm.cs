@@ -32,6 +32,7 @@ namespace MusteriTakip.Forms
             txtCompany.Text = Customer.Company;
             txtNotes.Text = Customer.Notes;
             lblDateCreated.Text += Customer.DateCreated;
+            btnSave.Enabled = false;
         }
         public void LoadOperationsData()
         {
@@ -43,6 +44,7 @@ namespace MusteriTakip.Forms
             DatabaseOperations.UpdateCustomerName(Customer.Id, txtName.Text);
             DatabaseOperations.UpdateCustomerCompany(Customer.Id, txtCompany.Text);
             DatabaseOperations.UpdateCustomerNotes(Customer.Id, txtNotes.Text);
+            btnSave.Enabled = false;
             MainForm.BtnRefreshPerformClick();
         }
 
@@ -104,6 +106,11 @@ namespace MusteriTakip.Forms
             var dgv = (DataGridView)sender;
             var currentRow = dgv.CurrentRow;
             MessageBox.Show(currentRow.Cells[1].Value.ToString(), "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void textChanged(object sender, EventArgs e)
+        {
+            btnSave.Enabled = true;
         }
     }
 }
