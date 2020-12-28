@@ -29,6 +29,7 @@ namespace MusteriTakip.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddNewCustomerForm));
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtCompany = new System.Windows.Forms.TextBox();
             this.lblName = new System.Windows.Forms.Label();
@@ -97,6 +98,7 @@ namespace MusteriTakip.Forms
             this.Controls.Add(this.txtCompany);
             this.Controls.Add(this.txtName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "AddNewCustomerForm";
             this.ShowIcon = false;
