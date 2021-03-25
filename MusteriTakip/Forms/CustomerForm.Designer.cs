@@ -46,18 +46,20 @@ namespace MusteriTakip.Forms
             this.btnAddOperation = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
+            this.txtTel = new System.Windows.Forms.TextBox();
+            this.lblTel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.operationsDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // txtNotes
             // 
             this.txtNotes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNotes.Location = new System.Drawing.Point(12, 159);
+            this.txtNotes.Location = new System.Drawing.Point(12, 189);
             this.txtNotes.MaxLength = 1024;
             this.txtNotes.Multiline = true;
             this.txtNotes.Name = "txtNotes";
-            this.txtNotes.Size = new System.Drawing.Size(270, 234);
-            this.txtNotes.TabIndex = 3;
+            this.txtNotes.Size = new System.Drawing.Size(270, 204);
+            this.txtNotes.TabIndex = 4;
             this.txtNotes.TextChanged += new System.EventHandler(this.textChanged);
             // 
             // operationsDataGridView
@@ -81,25 +83,25 @@ namespace MusteriTakip.Forms
             this.operationsDataGridView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.operationsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.operationsDataGridView.Size = new System.Drawing.Size(715, 346);
-            this.operationsDataGridView.TabIndex = 4;
+            this.operationsDataGridView.TabIndex = 9;
             this.operationsDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.operationsDataGridView_CellDoubleClick);
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(59, 76);
+            this.txtName.Location = new System.Drawing.Point(63, 76);
             this.txtName.MaxLength = 256;
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(223, 20);
+            this.txtName.Size = new System.Drawing.Size(219, 20);
             this.txtName.TabIndex = 1;
             this.txtName.TabStop = false;
             this.txtName.TextChanged += new System.EventHandler(this.textChanged);
             // 
             // txtCompany
             // 
-            this.txtCompany.Location = new System.Drawing.Point(59, 102);
+            this.txtCompany.Location = new System.Drawing.Point(63, 102);
             this.txtCompany.MaxLength = 256;
             this.txtCompany.Name = "txtCompany";
-            this.txtCompany.Size = new System.Drawing.Size(223, 20);
+            this.txtCompany.Size = new System.Drawing.Size(219, 20);
             this.txtCompany.TabIndex = 2;
             this.txtCompany.TabStop = false;
             this.txtCompany.TextChanged += new System.EventHandler(this.textChanged);
@@ -108,7 +110,7 @@ namespace MusteriTakip.Forms
             // 
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(8, 74);
+            this.lblName.Location = new System.Drawing.Point(12, 74);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(38, 20);
             this.lblName.TabIndex = 5;
@@ -118,7 +120,7 @@ namespace MusteriTakip.Forms
             // 
             this.lblCompany.AutoSize = true;
             this.lblCompany.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCompany.Location = new System.Drawing.Point(8, 102);
+            this.lblCompany.Location = new System.Drawing.Point(12, 102);
             this.lblCompany.Name = "lblCompany";
             this.lblCompany.Size = new System.Drawing.Size(49, 20);
             this.lblCompany.TabIndex = 6;
@@ -128,7 +130,7 @@ namespace MusteriTakip.Forms
             // 
             this.lblNotes.AutoSize = true;
             this.lblNotes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNotes.Location = new System.Drawing.Point(8, 136);
+            this.lblNotes.Location = new System.Drawing.Point(12, 166);
             this.lblNotes.Name = "lblNotes";
             this.lblNotes.Size = new System.Drawing.Size(51, 20);
             this.lblNotes.TabIndex = 7;
@@ -199,7 +201,7 @@ namespace MusteriTakip.Forms
             this.btnDeleteOperation.Name = "btnDeleteOperation";
             this.btnDeleteOperation.Padding = new System.Windows.Forms.Padding(2);
             this.btnDeleteOperation.Size = new System.Drawing.Size(83, 47);
-            this.btnDeleteOperation.TabIndex = 6;
+            this.btnDeleteOperation.TabIndex = 7;
             this.btnDeleteOperation.TabStop = false;
             this.btnDeleteOperation.Text = "İşi sil";
             this.btnDeleteOperation.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -215,7 +217,7 @@ namespace MusteriTakip.Forms
             this.btnAddOperation.Name = "btnAddOperation";
             this.btnAddOperation.Padding = new System.Windows.Forms.Padding(2);
             this.btnAddOperation.Size = new System.Drawing.Size(100, 47);
-            this.btnAddOperation.TabIndex = 10;
+            this.btnAddOperation.TabIndex = 8;
             this.btnAddOperation.TabStop = false;
             this.btnAddOperation.Text = "İş Ekle";
             this.btnAddOperation.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -255,12 +257,33 @@ namespace MusteriTakip.Forms
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // txtTel
+            // 
+            this.txtTel.Location = new System.Drawing.Point(63, 129);
+            this.txtTel.Name = "txtTel";
+            this.txtTel.Size = new System.Drawing.Size(219, 20);
+            this.txtTel.TabIndex = 3;
+            this.txtTel.TextChanged += new System.EventHandler(this.textChanged);
+            this.txtTel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTel_KeyPress);
+            // 
+            // lblTel
+            // 
+            this.lblTel.AutoSize = true;
+            this.lblTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblTel.Location = new System.Drawing.Point(12, 129);
+            this.lblTel.Name = "lblTel";
+            this.lblTel.Size = new System.Drawing.Size(30, 20);
+            this.lblTel.TabIndex = 15;
+            this.lblTel.Text = "Tel";
+            // 
             // CustomerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnBack;
             this.ClientSize = new System.Drawing.Size(1015, 491);
+            this.Controls.Add(this.lblTel);
+            this.Controls.Add(this.txtTel);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnDeleteOperation);
             this.Controls.Add(this.lblDate);
@@ -311,5 +334,7 @@ namespace MusteriTakip.Forms
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Button btnDeleteOperation;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.TextBox txtTel;
+        private System.Windows.Forms.Label lblTel;
     }
 }

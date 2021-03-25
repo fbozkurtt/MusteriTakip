@@ -31,6 +31,7 @@ namespace MusteriTakip.Forms
             txtName.Text = Customer.Name;
             txtCompany.Text = Customer.Company;
             txtNotes.Text = Customer.Notes;
+            txtTel.Text = Customer.Phone;
             lblDateCreated.Text += Customer.DateCreated;
             btnSave.Enabled = false;
         }
@@ -44,6 +45,7 @@ namespace MusteriTakip.Forms
             DatabaseOperations.UpdateCustomerName(Customer.Id, txtName.Text);
             DatabaseOperations.UpdateCustomerCompany(Customer.Id, txtCompany.Text);
             DatabaseOperations.UpdateCustomerNotes(Customer.Id, txtNotes.Text);
+            DatabaseOperations.UpdateCustomerPhone(Customer.Id, txtTel.Text);
             btnSave.Enabled = false;
             MainForm.BtnRefreshPerformClick();
         }
@@ -111,6 +113,14 @@ namespace MusteriTakip.Forms
         private void textChanged(object sender, EventArgs e)
         {
             btnSave.Enabled = true;
+        }
+
+        private void txtTel_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

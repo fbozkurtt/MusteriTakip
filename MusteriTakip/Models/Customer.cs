@@ -13,5 +13,6 @@ namespace MusteriTakip.Models
         public string Company { get; set; }
         public string Notes { get; set; }
         public string DateCreated { get; set; }
+        public string Phone { get; set; }
     }
 }

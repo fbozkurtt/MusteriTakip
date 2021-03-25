@@ -6,6 +6,7 @@ CREATE TABLE IF NOT EXISTS "Customer" (
 	"Company"	TEXT,
 	"Notes"	TEXT,
 	"DateCreated"	TEXT NOT NULL,
+	"Phone"	TEXT,
 	PRIMARY KEY("Id"),
 	UNIQUE("Company","Name")
 );

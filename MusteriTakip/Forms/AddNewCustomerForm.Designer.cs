@@ -35,6 +35,8 @@ namespace MusteriTakip.Forms
             this.lblName = new System.Windows.Forms.Label();
             this.lblCompany = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.lblTel = new System.Windows.Forms.Label();
+            this.txtTel = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtName
@@ -78,20 +80,42 @@ namespace MusteriTakip.Forms
             // btnAdd
             // 
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(188, 89);
+            this.btnAdd.Location = new System.Drawing.Point(188, 120);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(74, 29);
-            this.btnAdd.TabIndex = 2;
+            this.btnAdd.TabIndex = 3;
             this.btnAdd.Text = "Ekle";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // lblTel
+            // 
+            this.lblTel.AutoSize = true;
+            this.lblTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTel.Location = new System.Drawing.Point(13, 78);
+            this.lblTel.Name = "lblTel";
+            this.lblTel.Size = new System.Drawing.Size(34, 20);
+            this.lblTel.TabIndex = 5;
+            this.lblTel.Text = "Tel:";
+            // 
+            // txtTel
+            // 
+            this.txtTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTel.Location = new System.Drawing.Point(72, 78);
+            this.txtTel.MaxLength = 256;
+            this.txtTel.Name = "txtTel";
+            this.txtTel.Size = new System.Drawing.Size(190, 26);
+            this.txtTel.TabIndex = 2;
+            this.txtTel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTel_KeyPress);
             // 
             // AddNewCustomerForm
             // 
             this.AcceptButton = this.btnAdd;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(274, 130);
+            this.ClientSize = new System.Drawing.Size(274, 161);
+            this.Controls.Add(this.lblTel);
+            this.Controls.Add(this.txtTel);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.lblCompany);
             this.Controls.Add(this.lblName);
@@ -116,5 +140,7 @@ namespace MusteriTakip.Forms
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblCompany;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Label lblTel;
+        private System.Windows.Forms.TextBox txtTel;
     }
 }

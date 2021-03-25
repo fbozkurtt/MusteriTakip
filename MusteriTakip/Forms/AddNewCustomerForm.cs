@@ -29,13 +29,21 @@ namespace MusteriTakip.Forms
             }
             try
             {
-                DatabaseOperations.AddCustomer(txtName.Text, txtCompany.Text);
+                DatabaseOperations.AddCustomer(txtName.Text, txtCompany.Text, txtTel.Text);
                 MainForm.BtnRefreshPerformClick();
                 this.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void txtTel_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
             }
         }
     }

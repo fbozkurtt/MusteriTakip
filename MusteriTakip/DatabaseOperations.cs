@@ -35,7 +35,7 @@ namespace MusteriTakip
         {
             SQLiteDataAdapter da;
             DataSet ds;
-            var cmd = new SQLiteCommand("Select Id, Name, Company, Notes, DateCreated From Customer where Id = @Id", con);
+            var cmd = new SQLiteCommand("Select Id, Name, Company, Notes, DateCreated, Phone From Customer where Id = @Id", con);
             cmd.Parameters.Add("@Id", DbType.Int32).Value = id;
             da = new SQLiteDataAdapter(cmd);
             ds = new DataSet();
@@ -47,6 +47,7 @@ namespace MusteriTakip
                 Company = ds.Tables[0].Rows[0].ItemArray[2].ToString(),
                 Notes = ds.Tables[0].Rows[0].ItemArray[3].ToString(),
                 DateCreated = ds.Tables[0].Rows[0].ItemArray[4].ToString(),
+                Phone = ds.Tables[0].Rows[0].ItemArray[5].ToString(),
             };
             return customer;
         }
@@ -63,7 +64,7 @@ namespace MusteriTakip
             da.Fill(ds, "Customer");
             return ds;
         }
-        public static void AddCustomer(string name, string company)
+        public static void AddCustomer(string name, string company, string phone)
         {
             SQLiteCommand cmd;
             if (String.IsNullOrEmpty(name))
@@ -71,7 +72,7 @@ namespace MusteriTakip
                 return;
             }
             var dateCrated = DateTime.Now.ToString("dd.MM.yyyy HH:mm", new CultureInfo("tr-TR"));
-            cmd = new SQLiteCommand("INSERT INTO Customer (Name, Company, DateCreated) VALUES(@Name, @Company, @DateCreated); ", con);
+            cmd = new SQLiteCommand("INSERT INTO Customer (Name, Company, DateCreated, Phone) VALUES(@Name, @Company, @DateCreated, @Phone); ", con);
             cmd.Parameters.Add("@Name", DbType.String, name.Length).Value = name.ToUpper(new CultureInfo("tr-TR"));
             if (String.IsNullOrEmpty(company))
             {
@@ -80,6 +81,14 @@ namespace MusteriTakip
             else
             {
                 cmd.Parameters.Add("@Company", DbType.String, company.Length).Value = company.ToUpper(new CultureInfo("tr-TR"));
+            }
+            if (String.IsNullOrEmpty(phone))
+            {
+                cmd.Parameters.Add("@Phone", DbType.String).Value = null;
+            }
+            else
+            {
+                cmd.Parameters.Add("@Phone", DbType.String, phone.Length).Value = phone;
             }
             cmd.Parameters.Add("@DateCreated", DbType.String, dateCrated.Length).Value = dateCrated;
             cmd.ExecuteNonQuery();
@@ -145,6 +154,13 @@ DELETE FROM Operation WHERE CustomerId = @Id", con);
                 cmd = new SQLiteCommand("UPDATE Customer SET Company = @Param WHERE ID = @Id;", con);
                 cmd.Parameters.Add("@Param", DbType.String, param.Length).Value = param.ToUpper(new CultureInfo("tr-TR"));
             }
+            cmd.Parameters.Add("@Id", DbType.Int32).Value = id;
+            cmd.ExecuteNonQuery();
+        }
+        public static void UpdateCustomerPhone(int id, string param)
+        {
+            var cmd = new SQLiteCommand("UPDATE Customer SET Phone = @Param WHERE ID = @Id;", con);
+            cmd.Parameters.Add("@Param", DbType.String, param.Length).Value = param.ToUpper(new CultureInfo("tr-TR"));
             cmd.Parameters.Add("@Id", DbType.Int32).Value = id;
             cmd.ExecuteNonQuery();
         }
